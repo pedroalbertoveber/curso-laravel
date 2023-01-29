@@ -1,0 +1,12 @@
+O que é Laravel?
+- Framework construído na linguagem PHP;
+- Utiliza a arquitetura MVC;
+- Possui recursos muito interessantes que auxiliam o desenvolvimento de aplicações: artisian, migrations, blade e etc...;
+- Fácil de criar código, não é tão burocrático e flexibiliza bastante no desenvolvimento de aplicações;
+- A estrutura de pastas é simples, deixando o projeto organizado;
+
+Rotas e Views:
+- Vamos acessar as páginas do nosso projeto por meio de rotas;
+- As rotas chamas as views, que são as representações gráficas das páginas;
+- Nas views teremos os templates, onde há estruturação da página por meio do HTML;
+- Os templates também renderizam dados dinâmicos por meio do PHP;
