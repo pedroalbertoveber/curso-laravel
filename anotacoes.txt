@@ -10,3 +10,112 @@ Rotas e Views:
 - As rotas chamas as views, que são as representações gráficas das páginas;
 - Nas views teremos os templates, onde há estruturação da página por meio do HTML;
 - Os templates também renderizam dados dinâmicos por meio do PHP;
+
+Conhecendo o Blade:
+- Blade é a template engine do Laravel;
+- Com ele vamos deixas as nossas views dinâmicas;
+- Inserindo tags HTML e também dados que nos são fornecidos pelo banco;
+- Podemos dizer que as views serão responsabilidade do Blade;
+
+Explorando o Blade:
+- Podemos criar estruturas de repetição no Blade;
+- Executar PHP puro;
+- Escrever comentários nos arquivos de view;
+- O Blade realmente é muito versátil e nos permite chegar num resultado excelente de renderização de views;
+
+Adicionando arquivos estáticos:
+- Uma aplicação web normalmente tem arquivos estáticos de CSS, JS e imagens;
+- O Laravel proporciona uma maneira muito fácil de inserir estes arquivos no projeto;
+- Todos os recursos ficam na pasta public, e tem acesso direto nas tags que trabalham com arquivos estáticos;
+
+Layouts com Blade:
+- A funcionalidade de criar um layout permite o reaproveitamento de código;
+- Por exemplo: Pordemos utilizar o mesmo header e footer em todas as páginas sem repetir código;
+- Mas o layout do Blade não se limita a isso, podemos criar seções do site por meio do layout e também mudar o titla da página;
+
+Parâmetros nas rotas:
+- Podemos mudar como uma view nos responde adicionando parâmetros a uma rota;
+- Ao definir a rota devemos colocar o parâmetro desta maneira: {id};
+- Podemos ter parâmetros opcionais também, utilizando uma ?;
+- O Laravel aceita também query parameters, utilizando a seguinte sintaxe: ?nome=Matheus&idade=29;
+
+Controllers:
+- Os controllers são parte fundamental de toda aplicação em Laravel;
+- Geralmente condensam a maior parte da lógica;
+- Tem o papel de enviar e esperar a resposta do banco de dados;
+- E também receber e enviar alguma resposa para as views;
+- Os Controllers podem ser criados via artisan;
+- É comum retornar uma view ou redirecionar para um URL pelo Controller;
+
+Conexão com banco de dados:
+- A conexão do Laravel com o banco de dados é configurada pelo arquivo .env;
+- Isso nos proporciona maior liberdade e também segurança na aplicação;
+- O Laravel utiliza um ORM(Object-Relational Mapping) chamada Eloquent;
+- E também para a criação de tabelas, as migrations;
+
+Migrations:
+- As migrations funcionam como um versionamento de banco de dados;
+- Podemos avançar e retroceder a qualquer momento;
+- Adicionar colunas e remover de forma facilitada;
+- Fazer o setup de DB de uma nova instalação em apenas um comando;
+- Podemos verificar as migrations com migrate:status
+
+Avancando em migrations: 
+- Quando precisamos adicionar um novo campo a uma table devemos criar uma nova migration;
+- Porém devemos tomar cuidado para não rodar o comando fresh, e apagar todos os dados já existentes;
+- O comando rollback pode ser utilizado para voltar uma migration;
+- Para voltar todas podemos utilizar o reset;
+- Para voltar rodas e rodar o migrate novamente utilizamos o refresh;
+
+Eloquent:
+- O Eloquent é a ORM do Laravel;
+- Cada tabela tem um Model que é responsável pela interação entre as requisições do banco;
+- A convenção para o Model é o noma da entidade em singular, enquanto a tabela é a entidade no plural, Event e events;
+- No model faremos poucas alterações dos arquivos, geralmente configurações específicas;
+
+Adicionando Registros ao Banco de Dados: 
+- No Laravel é comum ter uma action específica para o post chamada de store;
+- Lá vamos cirar o objeto e compor ele com base nos dados enviados pelo POST;
+- Com o objeto formado utilizamos o método sabe para persistir os dados.
+
+Flash Messages:
+- Podemos adicionar mensagens ao usuário por session;
+- Estas mensagens são conhecidas por flash messages;
+- Podemos adicionar com o método with nos Controllers;
+- Utilizadas para apresentar um feedback ao usuário;
+- No blade podemos verificar a presença de mensagem pela diretiva @session;
+
+Salvando imagem no Laravel:
+- Para fazer o upload de imagens precisamos mudar o enctype do from e também criar um input de envio das mesmas;
+- No controller vamos fazer um tratamento de verificação da imagem que foi enviada;
+- E depois vamos salva ela com um nome único em um diretório do projeto;
+- No banco salvamos apenas o path para a imagem;
+
+Resgatando um registro do banco de dados:
+- Vamos fazer a view do evento nesta aula;
+- E com isso aprender a resgatar apenas um registro pelo Eloquent;
+- Vamos utilizar o método findOrFail;
+- E também criar uma nova view e rota para esta função;
+- Esta tela tem a função de exibir todas as informações do evento e também o botão de participar;
+
+Salvando JSON:
+- Podemos salvar um conjunto de dados no banco para itens de múltipla escolha;
+- Vamos criar um campo determinado de json via migrations;
+- No front-end podemos utilizar inputs com checkbox;
+- Após o envio para Controller, apenas recebemos do request os itens e o resto do processo é igual ao dos outros dados do nosso model;
+
+Salvando Datas: 
+- Para salvar datas no Laravel é muito fácil, precisamos criar um input do tipo date na nossa view;
+- Um campo de dateTime via migrations e processar o envio dos dados via controller pelo request de POST;
+
+Busca no Laravel:
+- Para criar um busca no Laravel é muito simples, vamos utilizar o Eloquent;
+- O método where vai identificar os registros que precisamos, fazendo um filtro e nos enviando para a view;
+- Podemos fazer a exibição da busca na prórpia home, mudando o layout com diretivas de Blade;
+
+Autenticação no Laravel: 
+- Podemos utilizar o Jetstream para aplicar uma autenticação de modo rápido no nosso sistema;
+- Primeiramento instalamos o pacote via composer;
+- Depois instalamos o liveware, que são componentes de autenticação para o Blade;
+- E por fim rodamos as migrations;
+
