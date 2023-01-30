@@ -119,3 +119,30 @@ Autenticação no Laravel:
 - Depois instalamos o liveware, que são componentes de autenticação para o Blade;
 - E por fim rodamos as migrations;
 
+Relacoões - One To Many:
+- Relações são essenciais para sistemas de banco de dados relacionais;
+- Vamos criar uma relação de um para muitos, entre usuários e eventos;
+- Isso tornará um usuário dono de um evento, e também a possibilidade dele possuir vários;
+- Precisaremos alterar as migrations, adicionando uma chabe estrangeira do model Event;
+
+Criando uma dashboard:
+- Agora que um usuário está ligado a um evento podemos criar uma dashboard;
+- Ela vai informar todos os eventos que o usuário possui;
+- Futuramente também vamos adicionar as ações de edição e de deletar evento nesta view;
+
+Deletando dados:
+- Vamos agora deletar um evento;
+- Utilizaremos uma nova rota para isso;
+- Outro verto HTTP também será preciso, o DELETE;
+- E ainda faremos a lógica no nosso controller para esta alteração persistir no banco de dados;
+
+Editando eventos:
+- Vamos fazer a lógica de editar um registro;
+- Precisaremos criar uma nova rota e também a view que mostra o form com os dados preenchidos;
+- Além disso será necessário aplicar um outro verbo HTTP: o PUT;
+- E persistir todas as alterações por meio de uma action no nosso Controller;
+
+Relações (many to many):
+- Vamos aprender uma novação relação de registro pelo Laravel: a many to many;
+- Vamos aplicar esta lógica a participação de eventos, onde um usuário pode ter vários eventos e um evento vários participantes;
+- Precisaremos criar uma nova tabela que administra estas relações, seguinda também a convenção do Laravel;
